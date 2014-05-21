@@ -14,7 +14,7 @@
                     "method": "GET",
                     "summary": "Pulls a listing of images",
                     "notes": "Returns a list of images, allowing you to filter by keyword query.",
-                    "nickname": "getJobs",
+                    "nickname": "getImageIndex",
                     "type": "images",
                     "parameters": [
                         {
@@ -32,7 +32,7 @@
                     "responseMessages": [
                         {
                             "code": 404,
-                            "message": "No Jobs To Return"
+                            "message": "No Images To Return"
                         }
                     ]
                 }
@@ -45,16 +45,16 @@
                     "method": "GET",
                     "summary": "Retrieve an image using its ID",
                     "notes": "Returns a images detail",
-                    "type": "people",
-                    "nickname": "getJobs",
+                    "type": "image",
+                    "nickname": "getImageDetail",
                     "produces": [
                         "application/json"
                     ],
                     "parameters": [
                         {
                             "name": "id",
-                            "description": "id for the job, notice this is in the path, not a query variable",
-                            "required": false,
+                            "description": "id for the image, notice this is in the path, not a query variable",
+                            "required": true,
                             "allowMultiple": false,
                             "dataType": "integer",
                             "paramType": "path"
@@ -62,12 +62,8 @@
                     ],
                     "responseMessages": [
                         {
-                            "code": 400,
-                            "message": "Invalid Application Information ID supplied"
-                        },
-                        {
                             "code": 404,
-                            "message": "People not found"
+                            "message": "Image not found"
                         }
                     ]
                 }
